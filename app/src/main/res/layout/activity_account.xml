@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/lytPrimary"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
@@ -51,7 +51,7 @@
             android:hint="Ingresa tu apellido paterno"
             android:inputType="text"
             android:textColor="#000000"
-            android:textColorHint="#7C7979"/>
+            android:textColorHint="#7C7979" />
 
         <EditText
             android:id="@+id/txtApellidoMaterno"
@@ -63,7 +63,7 @@
             android:hint="Ingresa tu apellido materno"
             android:inputType="text"
             android:textColor="#000000"
-            android:textColorHint="#7C7979"/>
+            android:textColorHint="#7C7979" />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -75,7 +75,7 @@
             android:hint="Ingresa tu email"
             android:inputType="textEmailAddress"
             android:textColor="#000000"
-            android:textColorHint="#7C7979"/>
+            android:textColorHint="#7C7979" />
 
         <EditText
             android:id="@+id/txtContrasena"
@@ -87,7 +87,7 @@
             android:hint="Ingresa tu contraseña"
             android:inputType="textPassword"
             android:textColor="#000000"
-            android:textColorHint="#7C7979"/>
+            android:textColorHint="#7C7979" />
 
         <Button
             android:id="@+id/btnCrear"
