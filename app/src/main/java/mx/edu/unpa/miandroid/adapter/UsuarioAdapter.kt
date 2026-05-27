@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import mx.edu.unpa.miandroid.R
 import mx.edu.unpa.miandroid.model.Usuario
 
-class UsuarioAdapter(private var listaUsuarios:List<Usuario>) : RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
+class UsuarioAdapter(private var listaUsuarios:List<Usuario>, private val onClick: (Usuario) -> Unit) : RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val txtNombre: TextView = itemView.findViewById(R.id.txtNombre)
@@ -32,6 +32,12 @@ class UsuarioAdapter(private var listaUsuarios:List<Usuario>) : RecyclerView.Ada
         holder.txtNombre.text = usuario.nombre
         holder.txtEmail.text = usuario.email
         holder.txtTelefono.text = usuario.telefono
+
+        // Asignar click
+        holder.itemView.setOnClickListener {
+            onClick(usuario)
+        }
+
     }
 
     fun actualizarLista(nuevaLista: List<Usuario>){
