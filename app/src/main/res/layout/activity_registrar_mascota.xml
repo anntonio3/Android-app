@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:paddingTop="?attr/actionBarSize">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,7 +17,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Header -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,7 +35,6 @@
                 android:textColor="@color/txtSecundario"
                 android:textSize="13sp" />
 
-            <!-- Card formulario -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,11 +60,49 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:text="Completa la información básica para publicarlo en adopción"
-                        android:textAlignment="center"
                         android:textColor="@color/txtSecundario"
                         android:textSize="12sp" />
 
-                    <!-- Nombre -->
+                    <!-- ── Foto ── -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foto (opcional)"
+                        android:textColor="@color/txtPrimario"
+                        android:textStyle="bold" />
+
+                    <!-- Preview de imagen -->
+                    <ImageView
+                        android:id="@+id/imgPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="8dp"
+                        android:background="#F0F0F0"
+                        android:contentDescription="Preview foto"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnAgregarFoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:backgroundTint="#F3EEF8"
+                        android:text="📷  Agregar foto"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFotoHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="Sin foto seleccionada"
+                        android:textColor="@color/txtHint"
+                        android:textSize="12sp" />
+
+                    <!-- ── Nombre ── -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -89,7 +124,7 @@
                         android:textColor="@color/txtPrimario"
                         android:textColorHint="@color/txtHint" />
 
-                    <!-- Tipo -->
+                    <!-- ── Tipo ── -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -107,7 +142,7 @@
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp" />
 
-                    <!-- Raza -->
+                    <!-- ── Raza ── -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -129,7 +164,7 @@
                         android:textColor="@color/txtPrimario"
                         android:textColorHint="@color/txtHint" />
 
-                    <!-- Sexo -->
+                    <!-- ── Sexo ── -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -172,6 +207,7 @@
                         android:gravity="center"
                         android:text="Ayúdalo a encontrar una familia"
                         android:textColor="@color/txtSecundario" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>

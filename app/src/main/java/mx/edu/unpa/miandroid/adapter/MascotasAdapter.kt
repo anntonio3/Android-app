@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import mx.edu.unpa.miandroid.R
 import mx.edu.unpa.miandroid.model.MascotaList
 
@@ -43,25 +44,39 @@ class MascotasAdapter(
         holder.tvSexo.text   = m.sexo
         holder.tvEstado.text = m.estadoAdopcion
 
-        // Color del badge de estado
-        val (bgColor, txtColor) = when (m.estadoAdopcion.lowercase().replace(" ", "_")) {
-            "disponible"  -> Pair(R.color.estadoDisponibleBg,  R.color.estadoDisponibleTxt)
-            "en_proceso"  -> Pair(R.color.estadoEnProcesoBg,   R.color.estadoEnProcesoTxt)
-            "adoptado"    -> Pair(R.color.estadoAdoptadoBg,    R.color.estadoAdoptadoTxt)
-            else          -> Pair(R.color.estadoDisponibleBg,  R.color.estadoDisponibleTxt)
+        // Color badge estado (igual que antes)
+        val (bgColor, txtColor) = when (
+            m.estadoAdopcion.lowercase().replace(" ", "_")) {
+            "disponible" -> Pair(R.color.estadoDisponibleBg, R.color.estadoDisponibleTxt)
+            "en_proceso" -> Pair(R.color.estadoEnProcesoBg,  R.color.estadoEnProcesoTxt)
+            "adoptado"   -> Pair(R.color.estadoAdoptadoBg,   R.color.estadoAdoptadoTxt)
+            else         -> Pair(R.color.estadoDisponibleBg, R.color.estadoDisponibleTxt)
         }
         holder.cardEstado.setCardBackgroundColor(ctx.getColor(bgColor))
         holder.tvEstado.setTextColor(ctx.getColor(txtColor))
 
-        // Imagen del tipo
-        val imgRes = when (m.tipoMascota.lowercase()) {
+        // ← NUEVO: foto real si existe, genérica si no
+        val urlFoto = m.urlFotoPrincipal   // nuevo campo en MascotaList
+        if (!urlFoto.isNullOrEmpty()) {
+            Glide.with(ctx)
+                .load(urlFoto)
+                .centerCrop()
+                .placeholder(imagenGenericaPorTipo(m.tipoMascota))
+                .error(imagenGenericaPorTipo(m.tipoMascota))
+                .into(holder.imgMascota)
+        } else {
+            holder.imgMascota.setImageResource(imagenGenericaPorTipo(m.tipoMascota))
+        }
+    }
+
+    private fun imagenGenericaPorTipo(tipo: String): Int {
+        return when (tipo.trim().lowercase()) {
             "perro"   -> R.drawable.img_perro
             "gato"    -> R.drawable.img_gato
             "loro"    -> R.drawable.img_loro
             "hamster" -> R.drawable.img_hamster
-            else      -> R.drawable.img_perro
+            else      -> android.R.drawable.ic_menu_gallery
         }
-        holder.imgMascota.setImageResource(imgRes)
     }
 
     fun actualizar(nuevaLista: List<MascotaList>) {

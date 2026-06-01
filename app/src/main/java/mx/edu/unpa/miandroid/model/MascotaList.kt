@@ -6,5 +6,6 @@ data class MascotaList(
     val raza: String?,
     val sexo: String,
     val estadoAdopcion: String,
-    val tipoMascota: String        // descripción: "Perro", "Gato", etc.
+    val tipoMascota: String ,       // descripción: "Perro", "Gato", etc.
+    val urlFotoPrincipal: String? = null   // ← nuevo campo
 )
