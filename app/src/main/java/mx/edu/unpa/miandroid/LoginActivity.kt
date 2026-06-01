@@ -64,6 +64,12 @@ class LoginActivity : AppCompatActivity() {
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etEmail.error = "Correo no válido"; return
         }
+
+        // Por esta:
+        //if (!email.endsWith("@gmail.com")) {
+        //    etEmail.error = "Solo se permiten correos @gmail.com"; return
+        //}
+
         if (password.isEmpty()) { etPassword.error = "Ingresa tu contraseña"; return }
 
         setLoading(true)

@@ -44,8 +44,12 @@ class CrearCuentaActivity : AppCompatActivity() {
         val confirmar = etConfirmar.text.toString().trim()
 
         if (email.isEmpty()) { etEmail.error = "Ingresa tu correo"; return }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etEmail.error = "Correo no válido (@gmail.com, etc.)"; return
+        //if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        //    etEmail.error = "Correo no válido (@gmail.com, etc.)"; return
+        //}
+        // Por esta:
+        if (!email.endsWith("@gmail.com")) {
+            etEmail.error = "Solo se permiten correos @gmail.com"; return
         }
         if (password.isEmpty()) { etPassword.error = "Ingresa una contraseña"; return }
         if (password.length < 4) { etPassword.error = "Mínimo 4 caracteres"; return }
