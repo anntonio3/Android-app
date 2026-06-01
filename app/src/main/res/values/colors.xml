@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Sistema original -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,8 +8,32 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name ="lytPrimary">#86CBC1</color>
-    <color name ="txtPrimary">#077b64</color>
-    <color name ="btnPrimary">#006E59</color>
+    <!-- Paleta original (compatible con código viejo) -->
+    <color name="lytPrimary">#86CBC1</color>
+    <color name="txtPrimary">#077b64</color>
+    <color name="btnPrimary">#006E59</color>
+
+    <!-- ── AdoptaMe ────────────────────────────────────────── -->
+    <!-- Fondo general lavanda muy claro -->
+    <color name="fondoApp">#F3EEF8</color>
+    <!-- Naranja principal (botones, acentos) -->
+    <color name="colorAccent">#F07030</color>
+    <!-- Texto oscuro principal -->
+    <color name="txtPrimario">#1A1A2E</color>
+    <!-- Texto secundario / subtítulos -->
+    <color name="txtSecundario">#6B6B7A</color>
+    <!-- Hint en inputs -->
+    <color name="txtHint">#BCBCCC</color>
+
+    <!-- Estados de adopción -->
+    <color name="colorDisponible">#2E8B57</color>
+    <color name="colorAgotado">#999999</color>
+
+    <color name="estadoDisponibleBg">#E8F5E9</color>
+    <color name="estadoDisponibleTxt">#2E7D32</color>
+    <color name="estadoEnProcesoBg">#FFF8E1</color>
+    <color name="estadoEnProcesoTxt">#F57F17</color>
+    <color name="estadoAdoptadoBg">#F5F5F5</color>
+    <color name="estadoAdoptadoTxt">#757575</color>
 </resources>
 
