@@ -11,12 +11,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mx.edu.unpa.miandroid.adapter.CategoriasAdapter
-import mx.edu.unpa.miandroid.client.RetrofitClient
 import mx.edu.unpa.miandroid.model.TipoMascotaResumen
 import mx.edu.unpa.miandroid.util.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import mx.edu.unpa.miandroid.client.RetrofitClient
 
 class CategoriasActivity : AppCompatActivity() {
 
@@ -71,6 +71,10 @@ class CategoriasActivity : AppCompatActivity() {
                 SessionManager.cerrarSesion(this)
                 startActivity(Intent(this, LoginActivity::class.java))
                 finishAffinity()
+                true
+            }
+            R.id.action_perfil -> {
+                startActivity(Intent(this, PerfilActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

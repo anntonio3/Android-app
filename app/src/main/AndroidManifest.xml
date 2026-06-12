@@ -24,29 +24,62 @@
         android:theme="@style/Theme.MiAndroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SolicitudActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MisSolicitudesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MisMascotasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleMascotaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MiMenu" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.MiAndroid">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".CrearCuentaActivity"    android:exported="false" />
-        <activity android:name=".RecuperarContrasenaActivity" android:exported="false" />
-        <activity android:name=".CategoriasActivity"     android:exported="false"
+        <activity
+            android:name=".CrearCuentaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecuperarContrasenaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoriasActivity"
+            android:exported="false"
             android:theme="@style/Theme.MiMenu" />
-        <activity android:name=".ListaMascotasActivity"  android:exported="false"
+        <activity
+            android:name=".ListaMascotasActivity"
+            android:exported="false"
             android:theme="@style/Theme.MiMenu" />
-        <activity android:name=".RegistrarMascotaActivity" android:exported="false"
+        <activity
+            android:name=".RegistrarMascotaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MiMenu" /> <!-- Actividades viejas (déjalas si las sigues usando) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false"
             android:theme="@style/Theme.MiMenu" />
-        <!-- Actividades viejas (déjalas si las sigues usando) -->
-        <activity android:name=".MainActivity"           android:exported="false" />
-        <activity android:name=".Dashboard"              android:exported="false"
-            android:theme="@style/Theme.MiMenu" />
-        <activity android:name=".Account"               android:exported="false" />
-        <activity android:name=".DetalleUsuario"         android:exported="false" />
+        <activity
+            android:name=".Account"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleUsuario"
+            android:exported="false" />
     </application>
 
 </manifest>

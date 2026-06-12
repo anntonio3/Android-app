@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondoApp"
+    android:orientation="vertical"
+    android:paddingTop="?attr/actionBarSize">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView android:id="@+id/tvTituloMascota"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent" android:textSize="22sp" android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Completa este formulario para enviar tu solicitud"
+                android:textAlignment="center"
+                android:textColor="@color/txtSecundario" android:textSize="13sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp" app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="24dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Nombre completo" android:textColor="@color/txtPrimario" android:textStyle="bold"/>
+                    <EditText android:id="@+id/etNombreCompleto"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:layout_marginTop="4dp" android:layout_marginBottom="14dp"
+                        android:background="@drawable/ic_input_background"
+                        android:hint="Tu nombre completo"
+                        android:paddingStart="16dp" android:paddingEnd="16dp"
+                        android:textColor="@color/txtPrimario" android:textColorHint="@color/txtHint"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Teléfono" android:textColor="@color/txtPrimario" android:textStyle="bold"/>
+                    <EditText android:id="@+id/etTelefono"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:layout_marginTop="4dp" android:layout_marginBottom="14dp"
+                        android:background="@drawable/ic_input_background"
+                        android:hint="10 dígitos" android:inputType="phone"
+                        android:paddingStart="16dp" android:paddingEnd="16dp"
+                        android:textColor="@color/txtPrimario" android:textColorHint="@color/txtHint"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Dirección" android:textColor="@color/txtPrimario" android:textStyle="bold"/>
+                    <EditText android:id="@+id/etDireccion"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:layout_marginTop="4dp" android:layout_marginBottom="14dp"
+                        android:background="@drawable/ic_input_background"
+                        android:hint="Tu dirección"
+                        android:paddingStart="16dp" android:paddingEnd="16dp"
+                        android:textColor="@color/txtPrimario" android:textColorHint="@color/txtHint"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Tipo de vivienda" android:textColor="@color/txtPrimario" android:textStyle="bold"/>
+                    <Spinner android:id="@+id/spinnerVivienda"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:layout_marginTop="4dp" android:layout_marginBottom="14dp"
+                        android:background="@drawable/ic_input_background"
+                        android:paddingStart="16dp" android:paddingEnd="16dp"/>
+
+                    <Switch android:id="@+id/switchPatio"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="¿Tienes patio o jardín?"
+                        android:textColor="@color/txtPrimario"/>
+
+                    <Switch android:id="@+id/switchOtrasMascotas"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:text="¿Tienes otras mascotas?"
+                        android:textColor="@color/txtPrimario"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Experiencia con mascotas" android:textColor="@color/txtPrimario" android:textStyle="bold"/>
+                    <EditText android:id="@+id/etExperiencia"
+                        android:layout_width="match_parent" android:layout_height="80dp"
+                        android:layout_marginTop="4dp" android:layout_marginBottom="14dp"
+                        android:background="@drawable/ic_input_background"
+                        android:gravity="top" android:hint="Cuéntanos tu experiencia (opcional)"
+                        android:inputType="textMultiLine"
+                        android:padding="16dp"
+                        android:textColor="@color/txtPrimario" android:textColorHint="@color/txtHint"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="¿Por qué quieres adoptar?" android:textColor="@color/txtPrimario" android:textStyle="bold"/>
+                    <EditText android:id="@+id/etMotivo"
+                        android:layout_width="match_parent" android:layout_height="80dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/ic_input_background"
+                        android:gravity="top" android:hint="Tu motivo"
+                        android:inputType="textMultiLine"
+                        android:padding="16dp"
+                        android:textColor="@color/txtPrimario" android:textColorHint="@color/txtHint"/>
+
+                    <Button android:id="@+id/btnEnviar"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/ic_button_primary_background"
+                        android:text="Enviar solicitud" android:textColor="@color/white"
+                        android:textSize="16sp" android:textStyle="bold"/>
+
+                    <ProgressBar android:id="@+id/progressBar"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_gravity="center" android:layout_marginTop="8dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

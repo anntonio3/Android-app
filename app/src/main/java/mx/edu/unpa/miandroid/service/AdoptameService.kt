@@ -45,4 +45,42 @@ interface AdoptameService {
         @Query("idMascota") idMascota: Int,
         @Body imagen: ImagenMascotaRequest
     ): Call<Any>
+
+    @GET("api/imagenes/mascota/{idMascota}")
+    fun getImagenesMascota(@Path("idMascota") idMascota: Int): Call<List<ImagenMascota>>
+
+
+    // ── Perfil ──
+    @PATCH("api/usuarios/{id}/perfil")
+    fun actualizarPerfil(
+        @Path("id") id: Int,
+        @Body datos: UsuarioUpdate
+    ): Call<Any>
+
+    @GET("api/usuarios/{id}")
+    fun getUsuario(@Path("id") id: Int): Call<Usuario>
+
+    // ── Mis mascotas ──
+    @GET("api/mascotas/usuario/{idUsuario}")
+    fun getMascotasUsuario(@Path("idUsuario") idUsuario: Int): Call<List<MascotaResponseDTO>>
+
+    // ── Solicitudes ──
+    @POST("api/solicitudes")
+    fun crearSolicitud(
+        @Query("idMascota") idMascota: Int,
+        @Query("idUsuario") idUsuario: Int,
+        @Body solicitud: SolicitudRequest
+    ): Call<SolicitudResponse>
+
+    @GET("api/solicitudes/solicitante/{idUsuario}")
+    fun getMisSolicitudes(@Path("idUsuario") idUsuario: Int): Call<List<SolicitudResponse>>
+
+    @GET("api/solicitudes/recibidas/{idDonador}")
+    fun getSolicitudesRecibidas(@Path("idDonador") idDonador: Int): Call<List<SolicitudResponse>>
+
+    @PATCH("api/solicitudes/{id}/estado")
+    fun cambiarEstadoSolicitud(
+        @Path("id") id: Int,
+        @Query("estado") estado: String
+    ): Call<SolicitudResponse>
 }

@@ -1,5 +1,6 @@
 package mx.edu.unpa.miandroid.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import mx.edu.unpa.miandroid.DetalleMascotaActivity
 import mx.edu.unpa.miandroid.R
 import mx.edu.unpa.miandroid.model.MascotaList
 
@@ -66,6 +68,13 @@ class MascotasAdapter(
                 .into(holder.imgMascota)
         } else {
             holder.imgMascota.setImageResource(imagenGenericaPorTipo(m.tipoMascota))
+        }
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(ctx, DetalleMascotaActivity::class.java).apply {
+                putExtra("mascota", m)
+            }
+            ctx.startActivity(intent)
         }
     }
 

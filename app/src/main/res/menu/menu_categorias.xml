@@ -9,6 +9,11 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/action_perfil"
+        android:title="Mi perfil"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_logout"
         android:title="Cerrar sesión"
         app:showAsAction="never" />
